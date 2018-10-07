@@ -17,8 +17,10 @@ window.onload = () => {
     return (Math.round(num * 1e2) / 1e2).toFixed(2);
   };
 
-  socket.onmessage = e => {
-    let data = JSON.parse(e.data);
+  socket.onmessage = msg => {
+    let res = msg.data;
+    let data = JSON.parse(res);
+    console.log(data);
     messagesList.innerHTML =
       `
             <li>
@@ -30,7 +32,7 @@ window.onload = () => {
                   data.priceUsd * data.lastEthPrice
                 )}</span>
             </li>
-        ` + messagesList.innerHTML;
+      ` + messagesList.innerHTML;
   };
 
   socket.onclose = e => {
