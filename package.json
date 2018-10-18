@@ -12,7 +12,9 @@
     "moment": "^2.22.2",
     "ws": "^6.0.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "grunt-reload-chrome": "^0.1.4"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
